@@ -23,6 +23,8 @@ def car(x,y):
 x = (display_width * 0.45)
 y = (display_height * 0.8)
 
+x_change = 0
+
 crashed = False
 
 while not crashed:
@@ -31,8 +33,27 @@ while not crashed:
         if event.type == pygame.QUIT:
             crashed = True
 
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                x_change = -5
+                print("leftkey")
+
+            elif event.key == pygame.K_RIGHT:
+                x_change = 5
+                print("rightkey")
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                x_change = 0
+                print("keyup")
+
+        print(event)
+
+    x += x_change
+
     gameDisplay.fill(white)
     car(x,y)
+
     pygame.display.update()
     clock.tick(30)
 
