@@ -25,6 +25,7 @@ pygame.draw.polygon(gameDisplay,green, ((25,75),(76,47),(98,105),(129,134)))
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            
             pygame.quit()
             quit()
 

@@ -19,7 +19,6 @@ bright_red = (250,0,0)
 bright_green = (0,250,0)
 bright_blue = (0,0,250)
 
-
 gameDisplay = pygame.display.set_mode((800,600))
 pygame.display.set_caption("A bit Racey")
 clock = pygame.time.Clock()
