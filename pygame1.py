@@ -179,6 +179,10 @@ def game_loop():
                     x_change = 5
                     print("rightkey")
 
+                elif event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    quit()
+
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                     x_change = 0
@@ -204,7 +208,7 @@ def game_loop():
             thing_speed += 1
             thing_width += (dodged * 1.2)
 
-        if y <= (thing_starty + thing_height):
+        if (thing_starty - car_height)<= y <= (thing_starty + thing_height):
 
             if x > (thing_startx - car_width) and x < (thing_startx + thing_width):
                 crash()
