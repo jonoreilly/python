@@ -174,16 +174,16 @@ class MOB ():
     size = [20, 20]
     color = black
 
-
     #set position
     def move(self, speed):
         self.pos[0] += speed[0]
         self.pos[1] += speed[1]
 
-
     #draw square
     def draw(self):
         pygame.draw.rect(screen, self.color,(self.pos[0], self.pos[1], self.size[0], self.size[1]))#add frame_size between ")" - ")"
+
+
 
 
 #main script
