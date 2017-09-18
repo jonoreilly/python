@@ -213,8 +213,7 @@ class MOB():
 def readmouse(mouse,player):
     attacking = False
     for item in items:
-        if item.team == "enemy":
-            print("Mouse :  "+str(pygame.mouse.get_pos()) +"    Enemy :  "+str(item.pos)+"      Hitbox :  "+str(item.hitbox))
+        if item.team == "enemy" and item.status == "alive":
             if item.pos[0] <  pygame.mouse.get_pos()[0] < item.pos[0] + item.hitbox[2]:
                 if item.pos[1] <  pygame.mouse.get_pos()[1] < item.pos[1] + item.hitbox[3]:
                     mouse.mask = mouse.swordmask
@@ -257,11 +256,19 @@ def game():
             item.move()
         refresh()
 
-
-
+def intro():
+    screen.fill((125,125,125))
+    pygame.font.init()
+    font = pygame.font.SysFont("Comic Sans MS", 30)
+    text = font.render("Age of Empires :  Popeye's expansion", True, (255,0,0))
+    screen.blit(text, (200,size[1]/2))
+    pygame.display.flip()
+    time.sleep(2)
+    
 
 
 #main script
+intro()
 game()
             
             
