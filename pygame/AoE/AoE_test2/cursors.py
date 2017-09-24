@@ -145,6 +145,61 @@ class cursors ():
 
 
 
+def readmouse(mouse, units):
+    attacking = False
+    target = None
+    mouse.setmask("hand")
+    #set flags and mouse icon if mous touching item
+    for item in units:
+        item.selected = False
+        if item.status == "alive":
+            if item.pos[0] - item.size[0]/2 <  pygame.mouse.get_pos()[0] < item.pos[0] + item.size[0]/2:
+                if item.pos[1] - item.size[1]/2 <  pygame.mouse.get_pos()[1] < item.pos[1] + item.size[1]/2:
+                    if item.team == "enemy":
+                        mouse.setmask("sword")
+                    target = item
+                    target.selected = True
+
+    #actions if clicked
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:  #1-left, 2-wheel, 3-right
+                mouse.pressed()
+                if target == None:
+                    mouse.selected = None
+                elif target.team == "player":
+                    mouse.selected = target
+                    target.selected = True
+            if event.button == 3 and mouse.selected != None:
+                if mouse.selected.team == "player":
+                    if target == None:                           
+                        mouse.selected.attack = False
+                        mouse.selected.target = None
+                        mouse.selected.setdirection(pygame.mouse.get_pos())
+                    else:
+                        if target.team == "enemy":
+                            mouse.selected.attack = True
+                            mouse.selected.target = target
+                            mouse.selected.setdirection(target.pos)
+                        else:
+                            mouse.selected.attack = False
+                            mouse.selected.target = None
+                            mouse.selected.setdirection(pygame.mouse.get_pos())
+                            
+                    mouse.pressed()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                quit()
+    if not pygame.mouse.get_pressed()[0] and not pygame.mouse.get_pressed()[2]:
+        mouse.released()
+    if mouse.selected != None:
+        mouse.selected.selected = True
+
+
+
+
+
 
 
 
