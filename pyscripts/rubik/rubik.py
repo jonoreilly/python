@@ -1,11 +1,6 @@
 import time
 import random
-
-
-
-
-
-
+from copy import deepcopy
 
 
 class cube():
@@ -53,10 +48,8 @@ class cube():
 
     def spin(self, side, direction):
 
-        held = []
-        for i in range (0,6):
-            held.append(self.face[i])
-
+        held = deepcopy(self.face)
+        
         if direction == "C" or direction == "c":
             times = 3
         elif direction == "A" or direction == "a":
@@ -64,61 +57,61 @@ class cube():
 
         for each in range (0,times):
 
-            for e in range(0,2):
-                for i in range (0,2):
-                    self.face [side] [e] [i] = held [side] [i] [2-e]
+            for i in range (0,3):
+                for e in range (0,3):
+                    self.face [side] [e] [i] = int(held [side] [i] [2-e])
 
             if side == 0:
                 for i in range (0,3):
-                    self.face [2] [2] [i] = held [3] [i] [0]
-                    self.face [3] [i] [0] = held [4] [0] [2-i]
-                    self.face [4] [0] [i] = held [5] [i] [2]
-                    self.face [5] [i] [2] = held [2] [2] [2-i]
+                    self.face [2] [2] [i] = int(held [3] [i] [0])
+                    self.face [3] [i] [0] = int(held [4] [0] [2-i])
+                    self.face [4] [0] [i] = int(held [5] [i] [2])
+                    self.face [5] [i] [2] = int(held [2] [2] [2-i])
 
-            if side == 1:
+            elif side == 1:
                 for i in range (0,3):
-                    self.face [3] [i] [2] = held [2] [0] [i]
-                    self.face [2] [0] [i] = held [5] [2-i] [0]
-                    self.face [5] [i] [0] = held [4] [2] [i]
-                    self.face [4] [2] [i] = held [3] [2-i] [2]
+                    self.face [3] [i] [2] = int(held [2] [0] [i])
+                    self.face [2] [0] [i] = int(held [5] [2-i] [0])
+                    self.face [5] [i] [0] = int(held [4] [2] [i])
+                    self.face [4] [2] [i] = int(held [3] [2-i] [2])
 
-            if side == 2:
+            elif side == 2:
                 for i in range (0,3):
-                    self.face [0] [0] [i] = held [5] [0] [i]
-                    self.face [5] [0] [i] = held [1] [0] [i]
-                    self.face [1] [0] [i] = held [3] [0] [i]
-                    self.face [3] [0] [i] = held [0] [0] [i]
+                    self.face [0] [0] [i] = int(held [5] [0] [i])
+                    self.face [5] [0] [i] = int(held [1] [0] [i])
+                    self.face [1] [0] [i] = int(held [3] [0] [i])
+                    self.face [3] [0] [i] = int(held [0] [0] [i])
 
-            if side == 3:
+            elif side == 3:
                 for i in range (0,3):
-                    self.face [0] [i] [2] = held [2] [i] [2]
-                    self.face [2] [i] [2] = held [1] [2-i] [0]
-                    self.face [1] [0] [i] = held [4] [2-i] [2]
-                    self.face [4] [i] [2] = held [0] [i] [2]
+                    self.face [0] [i] [2] = int(held [2] [i] [2])
+                    self.face [2] [i] [2] = int(held [1] [2-i] [0])
+                    self.face [1] [i] [0] = int(held [4] [2-i] [2])
+                    self.face [4] [i] [2] = int(held [0] [i] [2])
 
-            if side == 4:
+            elif side == 4:
                 for i in range (0,3):
-                    self.face [0] [2] [i] = held [3] [2] [i]
-                    self.face [3] [2] [i] = held [1] [2] [i]
-                    self.face [1] [2] [i] = held [5] [2] [i]
-                    self.face [5] [2] [i] = held [0] [2] [i]
+                    self.face [0] [2] [i] = int(held [3] [2] [i])
+                    self.face [3] [2] [i] = int(held [1] [2] [i])
+                    self.face [1] [2] [i] = int(held [5] [2] [i])
+                    self.face [5] [2] [i] = int(held [0] [2] [i])
 
-            if side == 5:
+            elif side == 5:
                 for i in range (0,3):
-                    self.face [0] [i] [0] = held [4] [i] [0]
-                    self.face [4] [i] [0] = held [1] [2-i] [2]
-                    self.face [1] [i] [2] = held [2] [2-i] [0]
-                    self.face [2] [i] [0] = held [0] [i] [0]
+                    self.face [0] [i] [0] = int(held [4] [i] [0])
+                    self.face [4] [i] [0] = int(held [1] [2-i] [2])
+                    self.face [1] [i] [2] = int(held [2] [2-i] [0])
+                    self.face [2] [i] [0] = int(held [0] [i] [0])
                 
 
         
-    def print(self):
+    def print(self, face):
 
         print()
         for i in range(0,3):
             output = "       "
             for e in range (0,3):
-                output += str(self.face[2][i][e])
+                output += str(face[2][i][e])
                 output += " "
             print(output)
            
@@ -127,22 +120,22 @@ class cube():
         for i in range(0,3):
             output = ""
             for e in range (0,3):
-                output += str(self.face[5][i][e])
+                output += str(face[5][i][e])
                 output += " "
             output += " "
             
             for e in range (0,3):
-                output += str(self.face[0][i][e])
+                output += str(face[0][i][e])
                 output += " "
             output += " "
             
             for e in range (0,3):
-                output += str(self.face[3][i][e])
+                output += str(face[3][i][e])
                 output += " "
             output += " "
 
             for e in range (0,3):
-                output += str(self.face[1][i][e])
+                output += str(face[1][i][e])
                 output += " "
             print (output)
             
@@ -151,7 +144,7 @@ class cube():
         for i in range(0,3):
             output = "       "
             for e in range (0,3):
-                output += str(self.face[4][i][e])
+                output += str(face[4][i][e])
                 output += " "
             print(output)
         print()                
@@ -161,7 +154,7 @@ class cube():
 def game():
     rubik = cube()
     while True:
-        rubik.print()
+        rubik.print(rubik.face)
         side = int(input("What side do u wanna turn?  -> "))
         direction = input("Clockways (C) or Anticlockways (A)?  -> ")
         rubik.spin(side, direction)

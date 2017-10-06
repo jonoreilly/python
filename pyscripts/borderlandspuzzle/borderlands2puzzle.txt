@@ -1,0 +1,128 @@
+
+Begining state of lever :  0, shitch :  0valve :  0
+[1, 1, 1, 1, 1] : 4steps with['valve', 1], from :[0, 0, 1, 1, 1]
+[0, 0, 1, 1, 1] : 3steps with['tele', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 1], from :[1, 0, 1, 0, 0]
+[1, 0, 1, 0, 0] : 1steps with['lever', 0], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 0, 0, 0]
+
+
+Begining state of lever :  1, shitch :  0valve :  0
+[1, 1, 1, 1, 1] : 4steps with['valve', 1], from :[0, 0, 1, 1, 1]
+[0, 0, 1, 1, 1] : 3steps with['tele', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 0], from :[0, 0, 0, 1, 1]
+[0, 0, 0, 1, 1] : 1steps with['lever', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 1, 0, 0]
+
+
+Begining state of lever :  0, shitch :  1valve :  0
+[1, 1, 1, 1, 1] : 4steps with['tele', 1], from :[0, 1, 1, 1, 1]
+[0, 1, 1, 1, 1] : 3steps with['valve', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 1], from :[1, 0, 1, 0, 0]
+[1, 0, 1, 0, 0] : 1steps with['lever', 0], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 1, 0, 0]
+
+
+Begining state of lever :  1, shitch :  1valve :  0
+[1, 1, 1, 1, 1] : 4steps with['tele', 1], from :[0, 1, 1, 1, 1]
+[0, 1, 1, 1, 1] : 3steps with['valve', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 0], from :[0, 0, 0, 1, 1]
+[0, 0, 0, 1, 1] : 1steps with['lever', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 0, 1, 0]
+
+
+Begining state of lever :  0, shitch :  0valve :  1
+[1, 1, 1, 1, 1] : 4steps with['valve', 1], from :[0, 0, 1, 1, 1]
+[0, 0, 1, 1, 1] : 3steps with['tele', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 1], from :[1, 0, 1, 0, 0]
+[1, 0, 1, 0, 0] : 1steps with['lever', 0], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 0, 1, 0]
+
+
+Begining state of lever :  1, shitch :  0valve :  1
+[1, 1, 1, 1, 1] : 4steps with['valve', 1], from :[0, 0, 1, 1, 1]
+[0, 0, 1, 1, 1] : 3steps with['tele', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 0], from :[0, 0, 0, 1, 1]
+[0, 0, 0, 1, 1] : 1steps with['lever', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 1, 1, 0]
+
+
+Begining state of lever :  0, shitch :  1valve :  1
+[1, 1, 1, 1, 1] : 4steps with['lever', 0], from :[0, 1, 0, 1, 1]
+[0, 1, 0, 1, 1] : 3steps with['tele', 1], from :[1, 1, 0, 1, 1]
+[1, 1, 0, 1, 1] : 2steps with['lever', 1], from :[1, 1, 0, 0, 0]
+[1, 1, 0, 0, 0] : 1steps with['valve', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 1, 1, 0]
+
+
+Begining state of lever :  1, shitch :  1valve :  1
+[1, 1, 1, 1, 1] : 4steps with['tele', 0], from :[0, 1, 0, 0, 1]
+[0, 1, 0, 0, 1] : 3steps with['tele', 1], from :[1, 1, 0, 0, 1]
+[1, 1, 0, 0, 1] : 2steps with['valve', 1], from :[0, 0, 0, 0, 1]
+[0, 0, 0, 0, 1] : 1steps with['switch', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 0, 0, 1]
+
+
+Begining state of lever :  0, shitch :  0valve :  0
+[1, 1, 1, 1, 1] : 4steps with['lever', 1], from :[1, 1, 1, 0, 0]
+[1, 1, 1, 0, 0] : 3steps with['tele', 1], from :[0, 1, 1, 0, 0]
+[0, 1, 1, 0, 0] : 2steps with['valve', 1], from :[1, 0, 1, 0, 0]
+[1, 0, 1, 0, 0] : 1steps with['lever', 0], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 0, 0, 1]
+
+
+Begining state of lever :  1, shitch :  0valve :  0
+[1, 1, 1, 1, 1] : 4steps with['tele', 1], from :[0, 1, 1, 1, 1]
+[0, 1, 1, 1, 1] : 3steps with['valve', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 0], from :[0, 0, 0, 1, 1]
+[0, 0, 0, 1, 1] : 1steps with['lever', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 1, 0, 1]
+
+
+Begining state of lever :  0, shitch :  1valve :  0
+[1, 1, 1, 1, 1] : 4steps with['switch', 0], from :[1, 0, 0, 1, 0]
+[1, 0, 0, 1, 0] : 3steps with['tele', 1], from :[0, 0, 0, 1, 0]
+[0, 0, 0, 1, 0] : 2steps with['tele', 0], from :[1, 0, 1, 0, 0]
+[1, 0, 1, 0, 0] : 1steps with['lever', 0], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 1, 0, 1]
+
+
+Begining state of lever :  1, shitch :  1valve :  0
+[1, 1, 1, 1, 1] : 4steps with['tele', 1], from :[0, 1, 1, 1, 1]
+[0, 1, 1, 1, 1] : 3steps with['valve', 1], from :[1, 0, 1, 1, 1]
+[1, 0, 1, 1, 1] : 2steps with['lever', 0], from :[0, 0, 0, 1, 1]
+[0, 0, 0, 1, 1] : 1steps with['lever', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 0, 1, 1]
+
+
+Begining state of lever :  0, shitch :  0valve :  1
+[1, 1, 1, 1, 1] : 4steps with['tele', 0], from :[0, 1, 0, 0, 1]
+[0, 1, 0, 0, 1] : 3steps with['lever', 0], from :[1, 1, 1, 0, 1]
+[1, 1, 1, 0, 1] : 2steps with['tele', 1], from :[0, 1, 1, 0, 1]
+[0, 1, 1, 0, 1] : 1steps with['switch', 0], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 0, 1, 1]
+
+
+Begining state of lever :  1, shitch :  0valve :  1
+[1, 1, 1, 1, 1] : 4steps with['tele', 1], from :[0, 1, 1, 1, 1]
+[0, 1, 1, 1, 1] : 3steps with['switch', 0], from :[0, 0, 0, 1, 0]
+[0, 0, 0, 1, 0] : 2steps with['switch', 1], from :[0, 0, 0, 1, 1]
+[0, 0, 0, 1, 1] : 1steps with['lever', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 1, 1, 1]
+
+
+Begining state of lever :  0, shitch :  1valve :  1
+[1, 1, 1, 1, 1] : 4steps with['switch', 0], from :[1, 0, 0, 1, 0]
+[1, 0, 0, 1, 0] : 3steps with['lever', 1], from :[1, 0, 0, 0, 1]
+[1, 0, 0, 0, 1] : 2steps with['tele', 1], from :[0, 0, 0, 0, 1]
+[0, 0, 0, 0, 1] : 1steps with['switch', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [1, 1, 1, 1]
+
+
+Begining state of lever :  1, shitch :  1valve :  1
+[1, 1, 1, 1, 1] : 4steps with['switch', 1], from :[1, 1, 1, 1, 0]
+[1, 1, 1, 1, 0] : 3steps with['tele', 1], from :[0, 1, 1, 1, 0]
+[0, 1, 1, 1, 0] : 2steps with['switch', 0], from :[0, 0, 0, 1, 1]
+[0, 0, 0, 1, 1] : 1steps with['lever', 1], from :[0, 0, 0, 0, 0]
+Changing firststate to :  [0, 0, 0, 0]
+
