@@ -203,8 +203,8 @@ def autogame():
                 output += "]"
                 file.write(output)
                 print(time.time()-start)
-		file.write("\n"+str(time.time()-start))
-		file.close()
+                file.write("\n"+str(time.time()-start))
+                file.close()
                 break
             else:
                 output += ","
