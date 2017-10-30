@@ -44,7 +44,7 @@ class cube():
 
 
 
-# 0=Front, 1=Back, 2=Top, 3=Right, 4=Bottom, 5=left
+    # 0=Front, 1=Back, 2=Top, 3=Right, 4=Bottom, 5=left
 
     def spin(self, side, direction):
 
@@ -160,45 +160,7 @@ def game():
         rubik.spin(side, direction)
 
 
-
 game()
-
-
-
-
-'''
-# 0=White, 1= Blue, 2=Orange, 3=Green, 4=Brown, 5=Yellow
-
-test = [[[
-
-    0
-    
-    ]
-    ]
-    ]
-
-
-
-
-
-
-# 3d cube mapping
-
-class cube ():
-
-    def __init__ (self):
-
-        self.pieces = [
-            [[
-                
-                ]
-
-                ]
-            
-            ]
-'''
-
-
 
 
 
