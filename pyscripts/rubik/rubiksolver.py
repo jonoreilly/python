@@ -174,8 +174,8 @@ def autogame():
         if mainlist == []:
             print("u ran out of layouts, mate")
             break
-        countar += 1
         print(countar, len(mainlist),"\n")
+        countar += 1
         counter = 0
         for item in mainlist:
             progressBar(counter, len(mainlist), 50)
