@@ -163,7 +163,7 @@ def progressBar(value, endvalue, bar_length=20):
         
 
 def autogame():
-    global rubik, endlayout, startlayout, file
+    global rubik, endlayout, startlayout, file, start
     finish = False
     countar = 0
     newlist = [deepcopy(startlayout)]
@@ -202,7 +202,9 @@ def autogame():
             if selected == str(startlayout):
                 output += "]"
                 file.write(output)
-                file.close()
+                print(time.time()-start)
+		file.write(time.time()-start)
+		file.close()
                 break
             else:
                 output += ","
@@ -224,6 +226,7 @@ def manualgame():
 rubik = cube()    
 
 manualgame()
+start = time.time()
 autogame()
 
 
