@@ -198,8 +198,8 @@ def autogame():
     if finish:
         selected = endlayout
         output = "["
+        print("\nResults :")
         while True:
-            print("looped")
             output += "["+str(dicti[str(selected)][1])+","+str(dicti[str(selected)][2])+"]"
             selected = dicti[str(selected)][0]
             if selected == str(startlayout):
