@@ -205,10 +205,13 @@ def autogame():
             output.append([dicti[str(selected)][1],dicti[str(selected)][2]])
             selected = dicti[str(selected)][0]
             if selected == str(startlayout):
-                file.write(str(output))
+                holder = []
+                for i in range(0, len(output)):
+                    holder.append(output[i])
+                file.write(str(holder))
                 file.write("\n"+str(time.time()-start))
                 print(time.time()-start)
-                print(output)
+                print(holder)
                 file.close()
                 break
 
