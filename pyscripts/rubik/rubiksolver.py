@@ -165,7 +165,7 @@ def progressBar(value, endvalue, bar_length=20):
 def autogame():
     global rubik, endlayout, startlayout, file, start
     finish = False
-    countar = 0
+    countar = 1
     newlist = [deepcopy(startlayout)]
     dictify (newlist[0], "start", None, None)
     while finish == False:
