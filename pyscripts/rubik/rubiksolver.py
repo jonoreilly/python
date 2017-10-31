@@ -189,6 +189,9 @@ def autogame():
                 follow = dictify(rubik.face, item, move[0], move[1])
                 if follow:
                     newlist.append(deepcopy(rubik.face))
+                    if rubik.face == endlayout:
+                        finish = True
+                        break
         print()
         print()
         
