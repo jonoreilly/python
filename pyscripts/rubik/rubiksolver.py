@@ -202,7 +202,6 @@ def autogame():
         output = []
         print("\nResults :")
         while True:
-            print (dicti[str(selected)])
             output.append([dicti[str(selected)][1],dicti[str(selected)][2]])
             selected = dicti[str(selected)][0]
             if selected == str(startlayout):
