@@ -197,17 +197,16 @@ def autogame():
         
     if finish:
         selected = endlayout
-        output = "["
+        output = []
         print("\nResults :")
         while True:
-            output += "["+str(dicti[str(selected)][1])+","+str(dicti[str(selected)][2])+"]"
+            output.append("["+str(dicti[str(selected)][1])+","+str(dicti[str(selected)][2])+"]")
             selected = dicti[str(selected)][0]
             if selected == str(startlayout):
-                output += "]"
-                file.write(output)
+                file.write(str(output))
+                file.write("\n"+str(time.time()-start))
                 print(time.time()-start)
                 print(output)
-                file.write("\n"+str(time.time()-start))
                 file.close()
                 break
             else:
