@@ -192,6 +192,8 @@ def autogame():
                     if rubik.face == endlayout:
                         finish = True
                         break
+            if finish:
+                break
         print()
         print()
         
@@ -200,7 +202,7 @@ def autogame():
         output = []
         print("\nResults :")
         while True:
-            output.append("["+str(dicti[str(selected)][1])+","+str(dicti[str(selected)][2])+"]")
+            output.append([dicti[str(selected)][1],dicti[str(selected)][2]])
             selected = dicti[str(selected)][0]
             if selected == str(startlayout):
                 file.write(str(output))
