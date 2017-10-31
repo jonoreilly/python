@@ -142,6 +142,7 @@ class cube():
         self.face = deepcopy(layout)            
 
 
+#check if layout is saved in dict, if not it saves it
 def dictify(layout, lastlayout, side, direction):
     global dicti
     try:
@@ -152,6 +153,7 @@ def dictify(layout, lastlayout, side, direction):
         return True
 
 
+#cool awesome progression bar copied from stackoverflow
 def progressBar(value, endvalue, bar_length=20):
 
         percent = float(value) / endvalue
@@ -162,12 +164,14 @@ def progressBar(value, endvalue, bar_length=20):
         sys.stdout.flush()
         
 
+#automate the cube's solving
 def autogame():
     global rubik, endlayout, startlayout, file, start
     finish = False
     countar = 1
     newlist = [deepcopy(startlayout)]
     dictify (newlist[0], "start", None, None)
+    #reload the layout list with the next batch
     while finish == False:
         mainlist = deepcopy(newlist)
         newlist = []
@@ -177,16 +181,18 @@ def autogame():
         print(countar, len(mainlist),"\n")
         countar += 1
         counter = 0
+        #select a layout to move
         for item in mainlist:
             progressBar(counter, len(mainlist), 50)
             counter += 1
             if item == endlayout:
                 finish = True
                 break
+            #move, check and save that layout 
             for move in moves:
                 rubik.setsides(deepcopy(item))
                 rubik.spin(move[0], move[1])
-                follow = dictify(rubik.face, item, move[0], move[1])
+                follow = dictify(rubik.face, item, move[0], move[1]) #if not repeated return True
                 if follow:
                     newlist.append(deepcopy(rubik.face))
                     if rubik.face == endlayout:
@@ -196,7 +202,8 @@ def autogame():
                 break
         print()
         print()
-        
+
+    #calculate the route and display/save it
     if finish:
         selected = endlayout
         output = []
@@ -216,11 +223,12 @@ def autogame():
                 break
 
                        
-
+#set the cube layout from begining with inputs
 def manualgame():
     global rubik, startlayout
     while True:
         rubik.printface()
+        #if input isnt int then Break out and begin autosolving
         try:
             side = int(input("What side do u wanna turn? letter to quit  -> "))
         except ValueError:
@@ -232,6 +240,8 @@ def manualgame():
 
 rubik = cube()    
 
+
+#main script
 manualgame()
 start = time.time()
 autogame()
