@@ -206,6 +206,7 @@ def autogame():
                 output += "]"
                 file.write(output)
                 print(time.time()-start)
+                print(output)
                 file.write("\n"+str(time.time()-start))
                 file.close()
                 break
