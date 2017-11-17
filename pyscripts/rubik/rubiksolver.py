@@ -19,6 +19,10 @@ for i in range (0, 6):
     moves.append([i,"a"])
     moves.append([i,"c"])
 
+loadicons = ["-", "\\", "/"]
+loader = 0
+loads = 0
+
 
 class cube():
 
@@ -147,12 +151,21 @@ def dictify(layout, lastlayout, side, direction):
 
 #cool awesome progression bar copied from stackoverflow
 def progressBar(value, endvalue, bar_length=20):
-
+        global loader, loadicons, loads
         percent = float(value) / endvalue
         arrow = '-' * int(round(percent * bar_length)-1) + '>'
         spaces = ' ' * (bar_length - len(arrow))
+        
+        if loads > 25:
+            loads = 0
+            if loader > 1:
+                loader = 0
+            else:
+                loader += 1
+        else:
+            loads += 1
 
-        sys.stdout.write("\rPercent: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100))))
+        sys.stdout.write("\rPercent: [{0}] {1:2}% ({2})".format(arrow + spaces, int(round(percent * 100)), loadicons[loader]))
         sys.stdout.flush()
        
 
