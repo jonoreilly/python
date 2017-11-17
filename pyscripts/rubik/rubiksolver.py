@@ -3,15 +3,6 @@ import sys
 import random
 import time
 
-'''
-madict = {"patata":"i'm a patata"}
-def test(thing):
-    try:
-        holder = madict[thing]
-        print("FULL", madict[thing])
-    except KeyError:
-        print("EMPTY")
-'''
 
 file = open("rubiksolver.txt","w")
 
@@ -27,6 +18,7 @@ moves = []
 for i in range (0, 6):
     moves.append([i,"a"])
     moves.append([i,"c"])
+
 
 class cube():
 
@@ -165,9 +157,10 @@ def progressBar(value, endvalue, bar_length=20):
        
 
 def randomize():
-    print("RRRRRRRRRANDOM")
+    moves = random.randint(10, 20)
+    print("\nRRRRRRRRRANDOM  ",moves,"moves")
     global rubik
-    for i in range (0, random.randint(10, 20)):
+    for i in range (0, moves):
         if random.randint(0,1):
             letra = "c"
         else:
