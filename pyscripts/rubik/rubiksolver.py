@@ -162,7 +162,19 @@ def progressBar(value, endvalue, bar_length=20):
 
         sys.stdout.write("\rPercent: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100))))
         sys.stdout.flush()
-        
+       
+
+def randomize():
+    print("RRRRRRRRRANDOM")
+    global rubik
+    for i in range (0, random.randint(10, 20)):
+        if random.randint(0,1):
+            letra = "c"
+        else:
+            letra = "a"
+        rubik.spin(random.randint(0, 5),letra)
+    rubik.printface()
+
 
 #automate the cube's solving
 def autogame():
@@ -229,9 +241,12 @@ def manualgame():
     while True:
         rubik.printface()
         #if input isnt int then Break out and begin autosolving
+        value = input("What side do u wanna turn? S to start, R to randomize -> ")
         try:
-            side = int(input("What side do u wanna turn? letter to quit  -> "))
+            side = int(value)
         except ValueError:
+            if value == "r" or value == "R":
+                randomize()
             break
         direction = input("Clockways (C) or Anticlockways (A)?  -> ")
         rubik.spin(side, direction)
