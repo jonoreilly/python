@@ -1,4 +1,4 @@
-- Solucionador de cubos de Rubik    <a href="./pyscripts/rubik/rubiksolver.py">rubiksolver.py</a>
+- <a href="./pyscripts/rubik/rubiksolver.py">Solucionador de cubos de Rubik</a>
 
 - Automatizacion de tareas
 
