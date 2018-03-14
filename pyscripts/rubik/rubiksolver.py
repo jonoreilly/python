@@ -196,7 +196,7 @@ def autogame():
         if mainlist == []:
             print("u ran out of layouts, mate")
             break
-        print(countar, len(mainlist),"\n")
+        print("Moves: ", countar, "   Starting positions: ", len(mainlist),"\n")
         countar += 1
         counter = 0
         #select a layout to move

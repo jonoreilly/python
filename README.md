@@ -1,7 +1,7 @@
-- Solucionador de cubos de Rubik
+- <a href="./pyscripts/rubik/rubiksolver.py">Solucionador de cubos de Rubik</a>
 
-- Automatizacion de tareas
+- <a href="./pinpanpun/pinpanpun/pinpanpun.py">Automatizacion de tareas</a>  
 
-- Diseño de videojuegos
+- <a href="./pygame/AoE/AoE_test2/AoE2.py">DiseÃ±o de videojuegos</a>
 
-- Modelos y analisis matematicos
+- <a href="./pyscripts/capacity.py">Modelos y analisis matematicos</a>
