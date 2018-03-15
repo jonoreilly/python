@@ -223,8 +223,7 @@ def autogame():
         counter = 0
         #select a layout to move
         for item in mainlist:
-            #progressBar(counter, len(mainlist), 50)
-            print(countar, int((counter*100)/len(mainlist)))
+            progressBar(counter, len(mainlist), 50)
             counter += 1
             if item == endlayout:
                 finish = True
